@@ -28,5 +28,5 @@ function sourcePages(n,page=1){const r=R.find(r=>r.n===n);$('sourcepages-'+n).in
 function bind(){for(const r of R)bindSources(r.n)}
 function bindSources(n){const details=$('source-'+n);if(!details)return;details.ontoggle=()=>{if(details.open&&!$('sourcepages-'+n).innerHTML)sourcePages(n)};document.querySelectorAll(`[data-source="${n}"]`).forEach(b=>b.onclick=()=>{details.open=true;sourcePages(n,Number(b.dataset.page));details.scrollIntoView({block:'start'})})}
 $('search').addEventListener('input',()=>{clearTimeout(timer);timer=setTimeout(render,150)});for(const id of ['ministry','year'])$(id).onchange=render;$('reset').onclick=()=>{for(const id of ['search','ministry','year'])$(id).value='';render()};$('backtop').onclick=()=>window.scrollTo({top:0});render();
-</script><script src="news.js"></script></body></html>
+</script><script src="news.js?v=foldable-20261003"></script></body></html>
 
