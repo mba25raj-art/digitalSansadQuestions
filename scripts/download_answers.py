@@ -6,6 +6,8 @@ from pypdf import PdfReader
 root=Path(__file__).resolve().parents[1]
 manifest=json.loads((root/'pdf-manifest.json').read_text())
 out=root/'_site'
+from prepare_news import prepare_news
+prepare_news(root, out)
 assert len(manifest)==86 and len({r['id'] for r in manifest})==86
 (out/'answers').mkdir(parents=True, exist_ok=True)
 
